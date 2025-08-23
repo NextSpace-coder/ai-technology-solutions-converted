@@ -1,0 +1,27 @@
+
+.ss_btn {
+  margin-top: 40px;
+}
+.ss_btn a {
+  background: #ffe06f;
+  border: 1px solid #ffe06f;
+  border-radius: 5px;
+  color: #232434;
+  font-size: 18px;
+  padding: 14px 40px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 700;
+}
+.ss_btn a:hover,
+.ss_btn a:focus {
+  background: #3f3eed;
+  border: 1px solid #3f3eed;
+  color: #fff;
+  -webkit-box-shadow: 10px 15px 18px rgba(23, 23, 36, 0.1);
+  box-shadow: 10px 15px 18px rgba(23, 23, 36, 0.1);
+}

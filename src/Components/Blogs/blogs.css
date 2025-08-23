@@ -1,0 +1,59 @@
+.article_area {
+  padding-bottom: 50px;
+}
+
+
+.arti_btn {
+  color: #ffe06f;
+  font-weight: 600;
+  margin-top: 15px;
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.arti_btn:hover {
+  padding-left: 10px;
+  color: #ffe06f;
+}
+
+.arti_sp {
+}
+.arti_sp h2 {
+  margin-top: 30px;
+  font-weight: 700;
+  margin-left: 60px;
+  margin-bottom: 30px;
+}
+.arti_sp img {
+  margin-bottom: 30px;
+  width: 100%;
+}
+.arti_sp p {
+}
+.share_sp {
+  margin-top: 30px;
+}
+.share_sp h4 {
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.share_sp ul {
+}
+.share_sp ul li {
+  float: left;
+}
+.share_sp ul li a {
+  color: #232434;
+  transition: 0.3s;
+  padding: 15px;
+  background: #ffe06f;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.share_sp ul li a:hover {
+  background: #3f3eed;
+}
+.share_sp ul li a span {
+}
+/*START BLOG SIDEBAR DESIGN*/
