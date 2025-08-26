@@ -24,9 +24,8 @@ export const useContactSubmissions = () => {
         source: 'website',
         user_agent: userAgent,
         priority: 'normal',
-        status: 'new',
-        // Remove user_id requirement for anon submissions
-        user_id: '00000000-0000-0000-0000-000000000000'
+        status: 'new'
+        // No user_id needed for anonymous submissions
       };
 
       console.log('Submitting data:', submissionData);
