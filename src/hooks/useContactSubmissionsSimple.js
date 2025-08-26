@@ -5,13 +5,12 @@ export const useContactSubmissions = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Submit contact form
+  // Submit contact form using simple table
   const submitContact = async (formData) => {
     setLoading(true);
     setError(null);
 
     try {
-      // Get user's user agent for analytics
       const userAgent = navigator.userAgent;
       
       const submissionData = {
@@ -24,15 +23,13 @@ export const useContactSubmissions = () => {
         source: 'website',
         user_agent: userAgent,
         priority: 'normal',
-        status: 'new',
-        // Remove user_id requirement for anon submissions
-        user_id: '00000000-0000-0000-0000-000000000000'
+        status: 'new'
       };
 
-      console.log('Submitting data:', submissionData);
+      console.log('Submitting to simple table:', submissionData);
 
       const { data, error } = await supabase
-        .from('11564c6a-cc0e-4d8e-91b2-b028ee5d9af1_contact_submissions')
+        .from('contact_submissions_simple')
         .insert(submissionData)
         .select();
 
@@ -52,18 +49,17 @@ export const useContactSubmissions = () => {
     }
   };
 
-  // Get all contact submissions (for admin use)
+  // Get all contact submissions
   const getContactSubmissions = async (filters = {}) => {
     setLoading(true);
     setError(null);
 
     try {
       let query = supabase
-        .from('11564c6a-cc0e-4d8e-91b2-b028ee5d9af1_contact_submissions')
+        .from('contact_submissions_simple')
         .select('*')
         .order('created_at', { ascending: false });
 
-      // Apply filters
       if (filters.status) {
         query = query.eq('status', filters.status);
       }
@@ -95,12 +91,9 @@ export const useContactSubmissions = () => {
     try {
       const updateData = { status };
       if (priority) updateData.priority = priority;
-      if (status === 'resolved' || status === 'closed') {
-        updateData.responded_at = new Date().toISOString();
-      }
 
       const { data, error } = await supabase
-        .from('11564c6a-cc0e-4d8e-91b2-b028ee5d9af1_contact_submissions')
+        .from('contact_submissions_simple')
         .update(updateData)
         .eq('id', id)
         .select();
